@@ -1,0 +1,16 @@
+{
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false
+    },
+    "files.associations": {
+        "oled.h": "c",
+        "esc.h": "c",
+        "tim.h": "c",
+        "main.h": "c",
+        "stm32f1xx_hal_gpio_ex.h": "c",
+        "cstdint": "c"
+    }
+}
