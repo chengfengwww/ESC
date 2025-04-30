@@ -58,6 +58,6 @@ int SpeedControl(void);
 void Openloop_Start(void);
 TimeAndSpeedData SpeedDetection(void);
 void ESC_Init(void);
-void ClosedLoopCommutation(void);
+//void ClosedLoopCommutation(void);
 
 #endif
