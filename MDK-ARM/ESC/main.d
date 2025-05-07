@@ -33,4 +33,5 @@ esc\main.o: ../Core/Inc/usart.h
 esc\main.o: ../Core/Inc/gpio.h
 esc\main.o: ../USER/OLED.h
 esc\main.o: ../USER/ESC.h
+esc\main.o: D:\software\keil\ARM\ARMCC\Bin\..\include\math.h
 esc\main.o: D:\software\keil\ARM\ARMCC\Bin\..\include\stdio.h

@@ -30,4 +30,5 @@ esc\esc.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 esc\esc.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
 esc\esc.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 esc\esc.o: ../Core/Inc/tim.h
+esc\esc.o: D:\software\keil\ARM\ARMCC\Bin\..\include\math.h
 esc\esc.o: ..\USER\OLED.h

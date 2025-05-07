@@ -3,6 +3,7 @@
 
 #include "main.h"
 #include "tim.h"
+#include "math.h"
 
 
 
@@ -26,17 +27,19 @@ typedef enum
 
 typedef enum
 {
-    U_H = 0,
-    W_L,
+    U_L = 0,
     V_H,
-    U_L,
-    W_H,
-    V_L
+    W_L,
+    U_H,
+    V_L,
+    W_H
 }PhaseZeroStatus;
 
 typedef struct
 {
     int time;
+    int filtertime;
+    int tmp;
     float speed;
 }TimeAndSpeedData;
 
@@ -52,12 +55,14 @@ typedef struct
 }InterruptStateFlag;
 
 
+
 UnenergizedPhase ChangeStatus(ReversingStatus status, uint16_t ccr);
 void BlockedDetection(void);
 int SpeedControl(void);
 void Openloop_Start(void);
 TimeAndSpeedData SpeedDetection(void);
 void ESC_Init(void);
+void StatusDetectAndProcess(void);
 //void ClosedLoopCommutation(void);
 
 #endif
