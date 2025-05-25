@@ -109,6 +109,7 @@ int main(void)
   OLED_Init();
   ESC_Init();
   Openloop_Start();
+  int num = 0;
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -119,25 +120,25 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
     
-//    if(num == 100)
-//    {
-//      
-//			
-//      num = 0;
-//    }
-//    else
-//    {
-//      num ++;
-//    }
+    // if(num == 100)
+    // {
+    //   printf("%d,%d\n",test[0],test[1]);
+    //   num = 0;
+    // }
+    // else
+    // {
+    //   num ++;
+    // }
     //printf("%d",(int)zerostatus);
 		StatusDetectAndProcess();
-		printf("%d %d\n",test[0],test[1]);
+		
+    //printf("%d\n",test[1]);
 		//printf("%d,%d,%d\n",(int)t_v_Data.speed*100,t_v_Data.time,(int)zerostatus);
 		
     
     //printf("%d,%d,%d,%d,%d,%d\n",IT_Flag.U_H_Flag,IT_Flag.U_L_Flag,IT_Flag.V_H_Flag,IT_Flag.V_L_Flag,IT_Flag.W_H_Flag,IT_Flag.W_L_Flag);
-		 //OLED_ShowNum(2,1,t_v_Data.speed*100,5);
-		 //OLED_ShowNum(3,1,t_v_Data.time,8);
+		//OLED_ShowNum(2,1,t_v_Data.speed*100,5);
+		//OLED_ShowNum(3,1,t_v_Data.time,8);
     //OLED_ShowNum(4,1,(int)zerostatus,2);
     //OLED_ShowNum(4,8,(int)phase,2);
     //BlockedDetection();
