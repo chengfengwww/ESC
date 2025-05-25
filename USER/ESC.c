@@ -8,20 +8,7 @@ uint8_t OpenloopStart_Over_Flag = 0; // 开环启动结束标志
 TimeAndSpeedData t_v_Data;           // 时间和速度结构体变量
 float expectspeed;                   // 期望速度
 uint8_t FirstChange_Flag = 0;        // 第一次换向标志
-int test[2];
-uint8_t Change_Flag = 0;
-
-/**
- * @brief 定时中断回调函数，执行变量加一的操作
- */
-// void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
-// {
-//     if (htim->Instance == TIM3)
-//     {
-//         tim3_counts++;
-//         ClosedLoopCommutation();
-//     }
-// }
+uint8_t Change_Flag = 0;             // 换向标志
 
 /**
  * @brief 改变占空比
@@ -31,122 +18,6 @@ void ChangeCCR(uint16_t ccr)
 {
     changeable_ccr = ccr;
 }
-
-// void Change_IT_Flag(PhaseZeroStatus status)
-// {
-//     switch (status)
-//     {
-//     case U_H:
-//         IT_Flag.U_H_Flag = 1;
-//         break;
-//     case U_L:
-//         IT_Flag.U_L_Flag = 1;
-//         break;
-//     case V_H:
-//         IT_Flag.V_H_Flag = 1;
-//         break;
-//     case V_L:
-//         IT_Flag.V_L_Flag = 1;
-//         break;
-//     case W_H:
-//         IT_Flag.W_H_Flag = 1;
-//         break;
-//     case W_L:
-//         IT_Flag.W_L_Flag = 1;
-//         break;
-//     }
-// }
-
-// void ClosedLoopCommutation(void)
-// {
-//     if (IT_Flag.U_H_Flag == 1 && zerostatus == U_H)
-//     {
-//         if (tim3_counts >= (t_v_Data.time / 2))
-//         {
-//             phase = ChangeStatus(W_U, changeable_ccr);
-//             IT_Flag.U_H_Flag = 0;
-//         }
-//     }
-//     else if (IT_Flag.U_H_Flag == 1)
-//     {
-//         phase = ChangeStatus(W_U, changeable_ccr);
-//         IT_Flag.U_H_Flag = 0;
-//     }
-
-//     if (IT_Flag.U_L_Flag == 1 && zerostatus == U_L)
-//     {
-//         if (tim3_counts >= (t_v_Data.time / 2))
-//         {
-//             phase = ChangeStatus(U_W, changeable_ccr);
-//             IT_Flag.U_L_Flag = 0;
-//         }
-//     }
-//     else if (IT_Flag.U_L_Flag == 1)
-//     {
-//         phase = ChangeStatus(U_W, changeable_ccr);
-//         IT_Flag.U_L_Flag = 0;
-//     }
-
-//     /*******************************************************************/
-
-//     if (IT_Flag.V_H_Flag == 1 && zerostatus == V_H)
-//     {
-//         if (tim3_counts >= (t_v_Data.time / 2))
-//         {
-//             phase = ChangeStatus(U_V, changeable_ccr);
-//             IT_Flag.V_H_Flag = 0;
-//         }
-//     }
-//     else if (IT_Flag.V_H_Flag == 1)
-//     {
-//         phase = ChangeStatus(U_V, changeable_ccr);
-//         IT_Flag.V_H_Flag = 0;
-//     }
-
-//     if (IT_Flag.V_L_Flag == 1 && zerostatus == V_L)
-//     {
-//         if (tim3_counts >= (t_v_Data.time / 2))
-//         {
-//             phase = ChangeStatus(V_U, changeable_ccr);
-//             IT_Flag.V_L_Flag = 0;
-//         }
-//     }
-//     else if (IT_Flag.V_L_Flag == 1)
-//     {
-//         phase = ChangeStatus(V_U, changeable_ccr);
-//         IT_Flag.V_L_Flag = 0;
-//     }
-
-//     /******************************************************************/
-
-//     if (IT_Flag.W_H_Flag == 1 && zerostatus == W_H)
-//     {
-//         if (tim3_counts >= (t_v_Data.time / 2))
-//         {
-//             phase = ChangeStatus(V_W, changeable_ccr); // 更新到V_U状态
-//             IT_Flag.W_H_Flag = 0;
-//         }
-//     }
-//     else if (IT_Flag.W_H_Flag == 1)
-//     {
-//         phase = ChangeStatus(V_W, changeable_ccr);
-//         IT_Flag.W_H_Flag = 0;
-//     }
-
-//     if (IT_Flag.W_L_Flag == 1 && zerostatus == W_L)
-//     {
-//         if (tim3_counts >= (t_v_Data.time / 2))
-//         {
-//             phase = ChangeStatus(W_V, changeable_ccr); // 更新到V_U状态
-//             IT_Flag.W_L_Flag = 0;
-//         }
-//     }
-//     else if (IT_Flag.W_L_Flag == 1)
-//     {
-//         phase = ChangeStatus(W_V, changeable_ccr);
-//         IT_Flag.W_L_Flag = 0;
-//     }
-// }
 
 void ChangeBasedOnZerostatus(PhaseZeroStatus status)
 {
@@ -192,7 +63,7 @@ uint8_t MatchDetect(void)
 int timecontrol(int time)
 {
     float angle = atan(246.09142 / time) * 180.0 / 3.14159;
-    if(angle < 30)
+    if (angle < 30)
     {
         return (30 - angle) * time / 60.0;
     }
@@ -204,31 +75,9 @@ int timecontrol(int time)
 
 void StatusDetectAndProcess(void)
 {
-    // if (MatchDetect() == 1)
-    // {
-    //     if (__HAL_TIM_GET_COUNTER(&htim3) >= (t_v_Data.time / 8))
-    //     {
-    //         ChangeBasedOnZerostatus(zerostatus);
-    //     }
-    // }
-    // else if (MatchDetect() == 0)
-    // {
-    //     PhaseZeroStatus tmp;
-    //     if (zerostatus == U_L)
-    //     {
-    //         tmp = W_H;
-    //     }
-    //     else
-    //     {
-    //         tmp = (PhaseZeroStatus)((uint8_t)zerostatus - 1);
-    //     }
-    //     ChangeBasedOnZerostatus(tmp);
-    // }
-
-
     if (__HAL_TIM_GET_COUNTER(&htim3) >= timecontrol(t_v_Data.filtertime))
     {
-        if(Change_Flag == 1)
+        if (Change_Flag == 1)
         {
             ChangeBasedOnZerostatus(zerostatus);
             Change_Flag = 0;
@@ -236,241 +85,37 @@ void StatusDetectAndProcess(void)
     }
 }
 
-// int8_t LevelDetection(GPIO_TypeDef *GPIO_Port,uint16_t GPIO_Pin)
-// {
-//     uint8_t counts = 0;
-//     for(int i = 0; i < 9; i ++)
-//     {
-//         counts += (uint8_t)HAL_GPIO_ReadPin(GPIO_Port, GPIO_Pin);
-//     }
-//     if(counts == 9)
-//     {
-//         return 1;
-//     }
-//     else if(counts == 0)
-//     {
-//         return 0;
-//     }
-//     return -1;
-// }
-
-// void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
-// {
-//     if (GPIO_Pin == UOUT_Pin && (phase == U || phase == W || phase == All) && OpenloopStart_Over_Flag == 1)
-//     {
-//         if (FirstChange_Flag == 1)
-//         {
-//             FirstChange_Flag = 0;
-//             __HAL_TIM_SET_COUNTER(&htim3, 0);
-//             if (LevelDetection(UOUT_GPIO_Port, UOUT_Pin) == GPIO_PIN_SET)
-//             {
-//                 zerostatus = U_H;
-//                 ChangeBasedOnZerostatus(zerostatus);
-//             }
-//             else
-//             {
-//                 zerostatus = U_L;
-//                 ChangeBasedOnZerostatus(zerostatus);
-//             }
-//         }
-//         else
-//         {
-//             t_v_Data = SpeedDetection();
-//             if (LevelDetection(UOUT_GPIO_Port, UOUT_Pin) == GPIO_PIN_SET)
-//             {
-//                 zerostatus = U_H;
-//                 while(__HAL_TIM_GET_COUNTER(&htim3) < (t_v_Data.time / 2));
-//                 ChangeBasedOnZerostatus(zerostatus);
-//             }
-//             else
-//             {
-//                 zerostatus = U_L;
-//                 while(__HAL_TIM_GET_COUNTER(&htim3) < (t_v_Data.time / 2));
-//                 ChangeBasedOnZerostatus(zerostatus);
-//             }
-//             test[0] = t_v_Data.time;
-//             test[1] = (int)zerostatus;
-//         }
-//     }
-//     if (GPIO_Pin == VOUT_Pin && (phase == V || phase == U || phase == All) && OpenloopStart_Over_Flag == 1)
-//     {
-//         if (FirstChange_Flag == 1)
-//         {
-//             FirstChange_Flag = 0;
-//             __HAL_TIM_SET_COUNTER(&htim3, 0);
-//             if (LevelDetection(VOUT_GPIO_Port, VOUT_Pin) == GPIO_PIN_SET)
-//             {
-//                 zerostatus = V_H;
-//                 ChangeBasedOnZerostatus(zerostatus);
-//             }
-//             else
-//             {
-//                 zerostatus = V_L;
-//                 ChangeBasedOnZerostatus(zerostatus);
-//             }
-//         }
-//         else
-//         {
-//             t_v_Data = SpeedDetection();
-//             if (LevelDetection(VOUT_GPIO_Port, VOUT_Pin) == GPIO_PIN_SET)
-//             {
-//                 zerostatus = V_H;
-//                 while(__HAL_TIM_GET_COUNTER(&htim3) < (t_v_Data.time / 2));
-//                 ChangeBasedOnZerostatus(zerostatus);
-//             }
-//             else
-//             {
-//                 zerostatus = V_L;
-//                 while(__HAL_TIM_GET_COUNTER(&htim3) < (t_v_Data.time / 2));
-//                 ChangeBasedOnZerostatus(zerostatus);
-//             }
-//             test[0] = t_v_Data.time;
-//             test[1] = (int)zerostatus;
-//         }
-//     }
-//     if (GPIO_Pin == WOUT_Pin && (phase == W || phase == V || phase == All) && OpenloopStart_Over_Flag == 1)
-//     {
-//         if (FirstChange_Flag == 1)
-//         {
-//             FirstChange_Flag = 0;
-//             __HAL_TIM_SET_COUNTER(&htim3, 0);
-//             if (LevelDetection(WOUT_GPIO_Port, WOUT_Pin) == GPIO_PIN_SET)
-//             {
-//                 zerostatus = W_H;
-//                 ChangeBasedOnZerostatus(zerostatus);
-//             }
-//             else
-//             {
-//                 zerostatus = W_L;
-//                 ChangeBasedOnZerostatus(zerostatus);
-//             }
-//         }
-//         else
-//         {
-//             t_v_Data = SpeedDetection();
-//             if (LevelDetection(WOUT_GPIO_Port, WOUT_Pin) == GPIO_PIN_SET)
-//             {
-//                 zerostatus = W_H;
-//                 while(__HAL_TIM_GET_COUNTER(&htim3) < (t_v_Data.time / 2));
-//                 ChangeBasedOnZerostatus(zerostatus);
-//             }
-//             else
-//             {
-//                 zerostatus = W_L;
-//                 while(__HAL_TIM_GET_COUNTER(&htim3) < (t_v_Data.time / 2));
-//                 ChangeBasedOnZerostatus(zerostatus);
-//             }
-//             test[0] = t_v_Data.time;
-//             test[1] = (int)zerostatus;
-//         }
-//     }
-// }
-
-int PeakClean(PhaseZeroStatus statuslast, PhaseZeroStatus statusnow)
-{
-    // PhaseZeroStatus statusopposite;
-    // if ((uint8_t)statuslast - 3 >= 0)
-    // {
-    //     statusopposite = (PhaseZeroStatus)((uint8_t)statuslast - 3);
-    // }
-    // else
-    // {
-    //     statusopposite = (PhaseZeroStatus)((uint8_t)statuslast + 3);
-    // }
-    
-    // if (statusopposite == statusnow)
-    // {
-    //     if(__HAL_TIM_GET_COUNTER(&htim3) < 30 && __HAL_TIM_GET_COUNTER(&htim3) < t_v_Data.time / 8)
-    //     {
-    //         __HAL_TIM_SET_COUNTER(&htim3, __HAL_TIM_GET_COUNTER(&htim3) + t_v_Data.time);
-    //         t_v_Data.time = t_v_Data.tmp;
-    //         zerostatus = (PhaseZeroStatus)((uint8_t)statuslast - 1 >= 0 ? (uint8_t)statuslast - 1 : 5);
-    //         //ChangeBasedOnZerostatus(zerostatus);
-    //         //phase = (UnenergizedPhase)((uint8_t)statuslast % 3);
-    //         return -1;
-    //     }
-    //     else
-    //     {
-    //         return -1;
-    //     }
-    // }
-
-    if ((uint8_t)statusnow - (uint8_t)statuslast == 1 || (uint8_t)statusnow - (uint8_t)statuslast == -5)
-    {
-        return 0;
-    }
-
-    // if((uint8_t)statusnow - (uint8_t)statuslast != 3 && (uint8_t)statusnow - (uint8_t)statuslast == -3)
-    // {
-    //     return 0;
-    // }
-    // else if ((uint8_t)statusnow - (uint8_t)statuslast == 2 || (uint8_t)statusnow - (uint8_t)statuslast == -4)
-    // {
-    //     return 1;
-    // }
-    // else if((uint8_t)statusnow - (uint8_t)statuslast == 3 || (uint8_t)statusnow - (uint8_t)statuslast == -3)
-    // {
-    //     if(__HAL_TIM_GET_COUNTER(&htim3) < 20)
-    //     {
-    //         UnenergizedPhase tmp;
-    //         tmp = (UnenergizedPhase)((uint8_t)statuslast % 3 == 2 ? 0 : (uint8_t)statuslast % 3 + 1);
-    //         if(phase == tmp)
-    //         {
-    //             __HAL_TIM_SET_COUNTER(&htim3, __HAL_TIM_GET_COUNTER(&htim3) + t_v_Data.time);
-    //             t_v_Data.time = t_v_Data.tmp;
-    //             zerostatus = (PhaseZeroStatus)((uint8_t)statuslast - 1 >= 0 ? (uint8_t)statuslast - 1 : 5);
-    //             return -1;
-    //         }
-    //         else
-    //         {
-    //             __HAL_TIM_SET_COUNTER(&htim3, __HAL_TIM_GET_COUNTER(&htim3) + t_v_Data.time);
-    //             t_v_Data.time = t_v_Data.tmp;
-    //             zerostatus = (PhaseZeroStatus)((uint8_t)statuslast - 1 >= 0 ? (uint8_t)statuslast - 1 : 5);
-    //             return -1;
-    //         }
-    //         __HAL_TIM_SET_COUNTER(&htim3, __HAL_TIM_GET_COUNTER(&htim3) + t_v_Data.time);
-    //         t_v_Data.time = t_v_Data.tmp;
-    //         zerostatus = (PhaseZeroStatus)((uint8_t)statuslast - 1 >= 0 ? (uint8_t)statuslast - 1 : 5);
-    //         return -1;
-    //     }
-    // }
-    else
-    {
-        return -1;
-    }
-}
-
 PhaseZeroStatus zerostatuscheck(uint16_t GPIO_Pin)
 {
-    if(GPIO_Pin == UOUT_Pin)
+    if (GPIO_Pin == UOUT_Pin)
     {
-        if(HAL_GPIO_ReadPin(VOUT_GPIO_Port, VOUT_Pin) == GPIO_PIN_RESET && HAL_GPIO_ReadPin(WOUT_GPIO_Port, WOUT_Pin) == GPIO_PIN_SET)
+        if (HAL_GPIO_ReadPin(VOUT_GPIO_Port, VOUT_Pin) == GPIO_PIN_RESET && HAL_GPIO_ReadPin(WOUT_GPIO_Port, WOUT_Pin) == GPIO_PIN_SET)
         {
             return U_L;
         }
-        else if(HAL_GPIO_ReadPin(VOUT_GPIO_Port, VOUT_Pin) == GPIO_PIN_SET && HAL_GPIO_ReadPin(WOUT_GPIO_Port, WOUT_Pin) == GPIO_PIN_RESET)
+        else if (HAL_GPIO_ReadPin(VOUT_GPIO_Port, VOUT_Pin) == GPIO_PIN_SET && HAL_GPIO_ReadPin(WOUT_GPIO_Port, WOUT_Pin) == GPIO_PIN_RESET)
         {
             return U_H;
         }
     }
-    else if(GPIO_Pin == VOUT_Pin)
+    else if (GPIO_Pin == VOUT_Pin)
     {
-        if(HAL_GPIO_ReadPin(UOUT_GPIO_Port, UOUT_Pin) == GPIO_PIN_SET && HAL_GPIO_ReadPin(WOUT_GPIO_Port, WOUT_Pin) == GPIO_PIN_RESET)
+        if (HAL_GPIO_ReadPin(UOUT_GPIO_Port, UOUT_Pin) == GPIO_PIN_SET && HAL_GPIO_ReadPin(WOUT_GPIO_Port, WOUT_Pin) == GPIO_PIN_RESET)
         {
             return V_L;
         }
-        else if(HAL_GPIO_ReadPin(UOUT_GPIO_Port, UOUT_Pin) == GPIO_PIN_RESET && HAL_GPIO_ReadPin(WOUT_GPIO_Port, WOUT_Pin) == GPIO_PIN_SET)
+        else if (HAL_GPIO_ReadPin(UOUT_GPIO_Port, UOUT_Pin) == GPIO_PIN_RESET && HAL_GPIO_ReadPin(WOUT_GPIO_Port, WOUT_Pin) == GPIO_PIN_SET)
         {
             return V_H;
         }
     }
-    else if(GPIO_Pin == WOUT_Pin)
+    else if (GPIO_Pin == WOUT_Pin)
     {
-        if(HAL_GPIO_ReadPin(UOUT_GPIO_Port, UOUT_Pin) == GPIO_PIN_RESET && HAL_GPIO_ReadPin(VOUT_GPIO_Port, VOUT_Pin) == GPIO_PIN_SET)
+        if (HAL_GPIO_ReadPin(UOUT_GPIO_Port, UOUT_Pin) == GPIO_PIN_RESET && HAL_GPIO_ReadPin(VOUT_GPIO_Port, VOUT_Pin) == GPIO_PIN_SET)
         {
             return W_L;
         }
-        else if(HAL_GPIO_ReadPin(UOUT_GPIO_Port, UOUT_Pin) == GPIO_PIN_SET && HAL_GPIO_ReadPin(VOUT_GPIO_Port, VOUT_Pin) == GPIO_PIN_RESET)
+        else if (HAL_GPIO_ReadPin(UOUT_GPIO_Port, UOUT_Pin) == GPIO_PIN_SET && HAL_GPIO_ReadPin(VOUT_GPIO_Port, VOUT_Pin) == GPIO_PIN_RESET)
         {
             return W_H;
         }
@@ -496,11 +141,10 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
         {
             PhaseZeroStatus zerostatuslast = zerostatus;
             zerostatus = zerostatuscheck(GPIO_Pin);
-            test[1] = (int)zerostatus;
-            if((uint8_t)zerostatus - (uint8_t)zerostatuslast == 1 || (uint8_t)zerostatus - (uint8_t)zerostatuslast == -5)
+            if ((uint8_t)zerostatus - (uint8_t)zerostatuslast == 1 || (uint8_t)zerostatus - (uint8_t)zerostatuslast == -5)
             {
                 t_v_Data = SpeedDetection(); // 获取时间和速度数据
-                if(Change_Flag = 1)
+                if (Change_Flag = 1)
                 {
                     ChangeBasedOnZerostatus(zerostatuslast);
                 }
@@ -509,7 +153,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
                     Change_Flag = 1;
                 }
             }
-            else if(zerostatus != zerostatuslast)
+            else if (zerostatus != zerostatuslast)
             {
                 __HAL_TIM_SET_COUNTER(&htim3, 0);
                 ChangeBasedOnZerostatus(zerostatus);
@@ -530,11 +174,10 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
         {
             PhaseZeroStatus zerostatuslast = zerostatus;
             zerostatus = zerostatuscheck(GPIO_Pin);
-            test[1] = (int)zerostatus;
-            if((uint8_t)zerostatus - (uint8_t)zerostatuslast == 1 || (uint8_t)zerostatus - (uint8_t)zerostatuslast == -5)
+            if ((uint8_t)zerostatus - (uint8_t)zerostatuslast == 1 || (uint8_t)zerostatus - (uint8_t)zerostatuslast == -5)
             {
                 t_v_Data = SpeedDetection(); // 获取时间和速度数据
-                if(Change_Flag = 1)
+                if (Change_Flag = 1)
                 {
                     ChangeBasedOnZerostatus(zerostatuslast);
                 }
@@ -543,7 +186,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
                     Change_Flag = 1;
                 }
             }
-            else if(zerostatus != zerostatuslast)
+            else if (zerostatus != zerostatuslast)
             {
                 __HAL_TIM_SET_COUNTER(&htim3, 0);
                 ChangeBasedOnZerostatus(zerostatus);
@@ -564,11 +207,10 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
         {
             PhaseZeroStatus zerostatuslast = zerostatus;
             zerostatus = zerostatuscheck(GPIO_Pin);
-            test[1] = (int)zerostatus;
-            if((uint8_t)zerostatus - (uint8_t)zerostatuslast == 1 || (uint8_t)zerostatus - (uint8_t)zerostatuslast == -5)
+            if ((uint8_t)zerostatus - (uint8_t)zerostatuslast == 1 || (uint8_t)zerostatus - (uint8_t)zerostatuslast == -5)
             {
                 t_v_Data = SpeedDetection(); // 获取时间和速度数据
-                if(Change_Flag = 1)
+                if (Change_Flag = 1)
                 {
                     ChangeBasedOnZerostatus(zerostatuslast);
                 }
@@ -577,7 +219,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
                     Change_Flag = 1;
                 }
             }
-            else if(zerostatus != zerostatuslast)
+            else if (zerostatus != zerostatuslast)
             {
                 __HAL_TIM_SET_COUNTER(&htim3, 0);
                 ChangeBasedOnZerostatus(zerostatus);
@@ -586,163 +228,6 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
         __HAL_GPIO_EXTI_CLEAR_IT(WOUT_Pin);
     }
 }
-
-/**
- * @brief EXTI外部中断回调函数
- */
-// void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
-// {	
-//     // U相过零点，并且U相未通电
-//     if (GPIO_Pin == UOUT_Pin && (phase == U || phase == W || phase == All))
-//     {
-//         // U相为高电平
-//         if (HAL_GPIO_ReadPin(UOUT_GPIO_Port, UOUT_Pin) == GPIO_PIN_SET)
-//         {
-//             if (OpenloopStart_Over_Flag == 1)
-//             {
-//                 if (FirstChange_Flag == 1)
-//                 {
-//                     zerostatus = U_H;
-//                     FirstChange_Flag = 0;
-//                     __HAL_TIM_SET_COUNTER(&htim3, 0);
-//                     phase = ChangeStatus(U_W, changeable_ccr);
-//                 }
-//                 else if (PeakClean(zerostatus, U_H) == 0)
-//                 {
-//                     zerostatus = U_H;
-//                     t_v_Data = SpeedDetection(); // 获取时间和速度数据
-//                     test[0] = t_v_Data.time;
-//                     test[1] = (int)zerostatus;
-//                     // phase = V;
-//                     //  Change_IT_Flag(zerostatus);
-//                     //  while(tim3_counts < (t_v_Data.time / 2));//延后30度换向
-//                 }
-//             }
-//         }
-//         // U相为低电平
-//         else if (HAL_GPIO_ReadPin(UOUT_GPIO_Port, UOUT_Pin) == GPIO_PIN_RESET)
-//         {
-//             if (OpenloopStart_Over_Flag == 1)
-//             {
-//                 if (FirstChange_Flag == 1)
-//                 {
-//                     FirstChange_Flag = 0;
-//                     __HAL_TIM_SET_COUNTER(&htim3, 0);
-//                     phase = ChangeStatus(W_U, changeable_ccr); // 更新到U_V状态
-//                 }
-//                 else if (PeakClean(zerostatus, U_L) == 0)
-//                 {
-//                     zerostatus = U_L;
-//                     t_v_Data = SpeedDetection(); // 获取时间和速度数据
-//                     test[0] = t_v_Data.time;
-//                     test[1] = (int)zerostatus;
-//                     // Change_IT_Flag(zerostatus);
-//                     // phase = V;
-//                     // while(tim3_counts < (t_v_Data.time / 2));//延后30度换向
-//                 }
-//             }
-//         }
-//         __HAL_GPIO_EXTI_CLEAR_IT(UOUT_Pin);
-//     }
-
-//     else if (GPIO_Pin == VOUT_Pin && (phase == V || phase == U || phase == All))
-//     {
-//         if (HAL_GPIO_ReadPin(VOUT_GPIO_Port, VOUT_Pin) == GPIO_PIN_SET)
-//         {
-//             if (OpenloopStart_Over_Flag == 1)
-//             {
-//                 if (FirstChange_Flag == 1)
-//                 {
-//                     FirstChange_Flag = 0;
-//                     __HAL_TIM_SET_COUNTER(&htim3, 0);
-//                     phase = ChangeStatus(V_U, changeable_ccr);
-//                 }
-//                 else if (PeakClean(zerostatus, V_H) == 0)
-//                 {
-//                     zerostatus = V_H;
-//                     t_v_Data = SpeedDetection();
-//                     test[0] = t_v_Data.time;
-//                     test[1] = (int)zerostatus;
-//                     // Change_IT_Flag(zerostatus);
-//                     // phase = W;
-//                     // while(tim3_counts < (t_v_Data.time / 2));//延后30度换向
-//                 }
-//             }
-//         }
-//         else if (HAL_GPIO_ReadPin(VOUT_GPIO_Port, VOUT_Pin) == GPIO_PIN_RESET)
-//         {
-
-//             if (OpenloopStart_Over_Flag == 1)
-//             {
-//                 if (FirstChange_Flag == 1)
-//                 {
-//                     FirstChange_Flag = 0;
-//                     __HAL_TIM_SET_COUNTER(&htim3, 0);
-//                     phase = ChangeStatus(U_V, changeable_ccr);
-//                 }
-//                 else if (PeakClean(zerostatus, V_L) == 0)
-//                 {
-//                     zerostatus = V_L;
-//                     t_v_Data = SpeedDetection();
-//                     test[0] = t_v_Data.time;
-//                     test[1] = (int)zerostatus;
-//                     // Change_IT_Flag(zerostatus);
-//                     // phase = W;
-//                     // while(tim3_counts < (t_v_Data.time / 2));//延后30度换向
-//                 }
-//             }
-//         }
-//         __HAL_GPIO_EXTI_CLEAR_IT(VOUT_Pin);
-//     }
-//     else if (GPIO_Pin == WOUT_Pin && (phase == W || phase == V || phase == All))
-//     {
-//         if (HAL_GPIO_ReadPin(WOUT_GPIO_Port, WOUT_Pin) == GPIO_PIN_SET)
-//         {
-//             if (OpenloopStart_Over_Flag == 1)
-//             {
-//                 if (FirstChange_Flag == 1)
-//                 {
-//                     FirstChange_Flag = 0;
-//                     __HAL_TIM_SET_COUNTER(&htim3, 0);
-//                     phase = ChangeStatus(W_V, changeable_ccr);
-//                 }
-//                 else if (PeakClean(zerostatus, W_H) == 0)
-//                 {
-//                     zerostatus = W_H;
-//                     t_v_Data = SpeedDetection();
-//                     test[0] = t_v_Data.time;
-//                     test[1] = (int)zerostatus;
-//                     // Change_IT_Flag(zerostatus);
-//                     // phase = U;
-//                     // while(tim3_counts < (t_v_Data.time / 2));//延后30度换向
-//                 }
-//             }
-//         }
-//         else if (HAL_GPIO_ReadPin(WOUT_GPIO_Port, WOUT_Pin) == GPIO_PIN_RESET)
-//         {
-//             if (OpenloopStart_Over_Flag == 1)
-//             {
-//                 if (FirstChange_Flag == 1)
-//                 {
-//                     FirstChange_Flag = 0;
-//                     __HAL_TIM_SET_COUNTER(&htim3, 0);
-//                     phase = ChangeStatus(V_W, changeable_ccr);
-//                 }
-//                 else if (PeakClean(zerostatus, W_L) == 0)
-//                 {
-//                     zerostatus = W_L;
-//                     t_v_Data = SpeedDetection();
-//                     test[0] = t_v_Data.time;
-//                     test[1] = (int)zerostatus;
-//                     // Change_IT_Flag(zerostatus);
-//                     // phase = U;
-//                     // while(tim3_counts < (t_v_Data.time / 2));//延后30度换向
-//                 }
-//             }
-//         }
-//         __HAL_GPIO_EXTI_CLEAR_IT(WOUT_Pin);
-//     }
-// }
 
 /**
  * @brief 占空比置零，低mos管关闭
@@ -843,30 +328,26 @@ void Openloop_Start(void)
     int Openloopstatus = 0;
     int time = 6000;
 
-    phase = ChangeStatus(U_W, 40);
+    phase = ChangeStatus(U_W, 60);
     __HAL_TIM_SET_COUNTER(&htim3, 0);
-    while (__HAL_TIM_GET_COUNTER(&htim3) < 10000)
-        ;
+    while (__HAL_TIM_GET_COUNTER(&htim3) < 10000);
 
-    phase = ChangeStatus(W_V, 40);
+    phase = ChangeStatus(W_V, 60);
     __HAL_TIM_SET_COUNTER(&htim3, 0);
-    while (__HAL_TIM_GET_COUNTER(&htim3) < 10000)
-        ;
+    while (__HAL_TIM_GET_COUNTER(&htim3) < 10000);
 
-    phase = ChangeStatus(U_V, 40);
+    phase = ChangeStatus(U_V, 60);
     __HAL_TIM_SET_COUNTER(&htim3, 0);
-    while (__HAL_TIM_GET_COUNTER(&htim3) < 10000)
-        ;
+    while (__HAL_TIM_GET_COUNTER(&htim3) < 10000);
 
     Initialization();
     HAL_Delay(500);
 
-    for (int i = 0; i < 100; i++)
+    for (int i = 0; i < 10; i++)
     {
-        phase = ChangeStatus((ReversingStatus)(Openloopstatus % 6), 40);
+        phase = ChangeStatus((ReversingStatus)(Openloopstatus % 6), 60);
         __HAL_TIM_SET_COUNTER(&htim3, 0);
-        while (__HAL_TIM_GET_COUNTER(&htim3) < time)
-            ;
+        while (__HAL_TIM_GET_COUNTER(&htim3) < time);
         Openloopstatus++;
         if (time > 800)
         {
@@ -885,31 +366,6 @@ void Openloop_Start(void)
 
 TimeAndSpeedData SpeedDetection(void)
 {
-    // TimeAndSpeedData data;
-    // static int timelast,timenow;
-    // if(state == TIME_RESET)
-    // {
-    //     timelast = t_v_Data.tmp;
-    //     timenow = t_v_Data.tmp;
-    //     t_v_Data.time = t_v_Data.tmp;
-    // }
-    // else
-    // {
-    //     timenow =  __HAL_TIM_GET_COUNTER(&htim3);
-    //     if(timelast == 0)
-    //     {
-    //         data.time = timenow;
-    //     }
-    //     else
-    //     {
-    //         data.time = 0.3 * timenow + 0.7 * timelast;
-    //     }
-    //     data.speed = 60.0 / 7.0 / 360.0 / (data.time * 0.00001);
-    //     data.tmp = timelast;
-    //     timelast = timenow;
-    //     __HAL_TIM_SET_COUNTER(&htim3, 0);
-    //     return data;
-    // }
     TimeAndSpeedData data;
     data.tmp = data.time;
     data.time = __HAL_TIM_GET_COUNTER(&htim3);
@@ -928,23 +384,14 @@ TimeAndSpeedData SpeedDetection(void)
 
 void BlockedDetection(void)
 {
-    if ((__HAL_TIM_GET_COUNTER(&htim3) - t_v_Data.time > (t_v_Data.time / 10)) && OpenloopStart_Over_Flag == 1)
+    if ((__HAL_TIM_GET_COUNTER(&htim3) > 10000) && OpenloopStart_Over_Flag == 1)
     {
         Initialization();
         HAL_TIM_PWM_Stop(&htim2, TIM_CHANNEL_1);
         HAL_TIM_PWM_Stop(&htim2, TIM_CHANNEL_2);
         HAL_TIM_PWM_Stop(&htim2, TIM_CHANNEL_3);
+        HAL_TIM_Base_Stop(&htim3);
     }
-}
-
-int SpeedControl(void)
-{
-    float Kp = 0;
-    float Ki = 0;
-    static float erroraccumulate = 0;
-    int output = Kp * (expectspeed - t_v_Data.speed) + Ki * erroraccumulate;
-    erroraccumulate += expectspeed - t_v_Data.speed;
-    return output;
 }
 
 void ESC_Init(void)

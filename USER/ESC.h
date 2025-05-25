@@ -55,10 +55,8 @@ typedef struct
 }InterruptStateFlag;
 
 
-
 UnenergizedPhase ChangeStatus(ReversingStatus status, uint16_t ccr);
 void BlockedDetection(void);
-int SpeedControl(void);
 void Openloop_Start(void);
 TimeAndSpeedData SpeedDetection(void);
 void ESC_Init(void);
