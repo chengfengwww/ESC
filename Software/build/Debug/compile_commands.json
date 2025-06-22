@@ -1,0 +1,140 @@
+[
+{
+  "directory": "D:/STM32Project/ESC_2/build/Debug",
+  "command": "D:\\Toolchain\\STM32CubeCLT_1.18.0\\GNU-tools-for-STM32\\bin\\arm-none-eabi-gcc.exe -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -ID:/STM32Project/ESC_2/USER/Inc -ID:/STM32Project/ESC_2/Core/Inc -ID:/STM32Project/ESC_2/Drivers/STM32F1xx_HAL_Driver/Inc -ID:/STM32Project/ESC_2/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -ID:/STM32Project/ESC_2/Drivers/CMSIS/Device/ST/STM32F1xx/Include -ID:/STM32Project/ESC_2/Drivers/CMSIS/Include  -mcpu=cortex-m3  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -mcpu=cortex-m3  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11 -o CMakeFiles\\ESC.dir\\Core\\Src\\main.c.obj -c D:\\STM32Project\\ESC_2\\Core\\Src\\main.c",
+  "file": "D:\\STM32Project\\ESC_2\\Core\\Src\\main.c",
+  "output": "CMakeFiles\\ESC.dir\\Core\\Src\\main.c.obj"
+},
+{
+  "directory": "D:/STM32Project/ESC_2/build/Debug",
+  "command": "D:\\Toolchain\\STM32CubeCLT_1.18.0\\GNU-tools-for-STM32\\bin\\arm-none-eabi-gcc.exe -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -ID:/STM32Project/ESC_2/USER/Inc -ID:/STM32Project/ESC_2/Core/Inc -ID:/STM32Project/ESC_2/Drivers/STM32F1xx_HAL_Driver/Inc -ID:/STM32Project/ESC_2/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -ID:/STM32Project/ESC_2/Drivers/CMSIS/Device/ST/STM32F1xx/Include -ID:/STM32Project/ESC_2/Drivers/CMSIS/Include  -mcpu=cortex-m3  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -mcpu=cortex-m3  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11 -o CMakeFiles\\ESC.dir\\Core\\Src\\gpio.c.obj -c D:\\STM32Project\\ESC_2\\Core\\Src\\gpio.c",
+  "file": "D:\\STM32Project\\ESC_2\\Core\\Src\\gpio.c",
+  "output": "CMakeFiles\\ESC.dir\\Core\\Src\\gpio.c.obj"
+},
+{
+  "directory": "D:/STM32Project/ESC_2/build/Debug",
+  "command": "D:\\Toolchain\\STM32CubeCLT_1.18.0\\GNU-tools-for-STM32\\bin\\arm-none-eabi-gcc.exe -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -ID:/STM32Project/ESC_2/USER/Inc -ID:/STM32Project/ESC_2/Core/Inc -ID:/STM32Project/ESC_2/Drivers/STM32F1xx_HAL_Driver/Inc -ID:/STM32Project/ESC_2/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -ID:/STM32Project/ESC_2/Drivers/CMSIS/Device/ST/STM32F1xx/Include -ID:/STM32Project/ESC_2/Drivers/CMSIS/Include  -mcpu=cortex-m3  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -mcpu=cortex-m3  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11 -o CMakeFiles\\ESC.dir\\Core\\Src\\tim.c.obj -c D:\\STM32Project\\ESC_2\\Core\\Src\\tim.c",
+  "file": "D:\\STM32Project\\ESC_2\\Core\\Src\\tim.c",
+  "output": "CMakeFiles\\ESC.dir\\Core\\Src\\tim.c.obj"
+},
+{
+  "directory": "D:/STM32Project/ESC_2/build/Debug",
+  "command": "D:\\Toolchain\\STM32CubeCLT_1.18.0\\GNU-tools-for-STM32\\bin\\arm-none-eabi-gcc.exe -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -ID:/STM32Project/ESC_2/USER/Inc -ID:/STM32Project/ESC_2/Core/Inc -ID:/STM32Project/ESC_2/Drivers/STM32F1xx_HAL_Driver/Inc -ID:/STM32Project/ESC_2/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -ID:/STM32Project/ESC_2/Drivers/CMSIS/Device/ST/STM32F1xx/Include -ID:/STM32Project/ESC_2/Drivers/CMSIS/Include  -mcpu=cortex-m3  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -mcpu=cortex-m3  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11 -o CMakeFiles\\ESC.dir\\Core\\Src\\stm32f1xx_it.c.obj -c D:\\STM32Project\\ESC_2\\Core\\Src\\stm32f1xx_it.c",
+  "file": "D:\\STM32Project\\ESC_2\\Core\\Src\\stm32f1xx_it.c",
+  "output": "CMakeFiles\\ESC.dir\\Core\\Src\\stm32f1xx_it.c.obj"
+},
+{
+  "directory": "D:/STM32Project/ESC_2/build/Debug",
+  "command": "D:\\Toolchain\\STM32CubeCLT_1.18.0\\GNU-tools-for-STM32\\bin\\arm-none-eabi-gcc.exe -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -ID:/STM32Project/ESC_2/USER/Inc -ID:/STM32Project/ESC_2/Core/Inc -ID:/STM32Project/ESC_2/Drivers/STM32F1xx_HAL_Driver/Inc -ID:/STM32Project/ESC_2/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -ID:/STM32Project/ESC_2/Drivers/CMSIS/Device/ST/STM32F1xx/Include -ID:/STM32Project/ESC_2/Drivers/CMSIS/Include  -mcpu=cortex-m3  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -mcpu=cortex-m3  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11 -o CMakeFiles\\ESC.dir\\Core\\Src\\stm32f1xx_hal_msp.c.obj -c D:\\STM32Project\\ESC_2\\Core\\Src\\stm32f1xx_hal_msp.c",
+  "file": "D:\\STM32Project\\ESC_2\\Core\\Src\\stm32f1xx_hal_msp.c",
+  "output": "CMakeFiles\\ESC.dir\\Core\\Src\\stm32f1xx_hal_msp.c.obj"
+},
+{
+  "directory": "D:/STM32Project/ESC_2/build/Debug",
+  "command": "D:\\Toolchain\\STM32CubeCLT_1.18.0\\GNU-tools-for-STM32\\bin\\arm-none-eabi-gcc.exe -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -ID:/STM32Project/ESC_2/USER/Inc -ID:/STM32Project/ESC_2/Core/Inc -ID:/STM32Project/ESC_2/Drivers/STM32F1xx_HAL_Driver/Inc -ID:/STM32Project/ESC_2/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -ID:/STM32Project/ESC_2/Drivers/CMSIS/Device/ST/STM32F1xx/Include -ID:/STM32Project/ESC_2/Drivers/CMSIS/Include  -mcpu=cortex-m3  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -mcpu=cortex-m3  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11 -o CMakeFiles\\ESC.dir\\Core\\Src\\sysmem.c.obj -c D:\\STM32Project\\ESC_2\\Core\\Src\\sysmem.c",
+  "file": "D:\\STM32Project\\ESC_2\\Core\\Src\\sysmem.c",
+  "output": "CMakeFiles\\ESC.dir\\Core\\Src\\sysmem.c.obj"
+},
+{
+  "directory": "D:/STM32Project/ESC_2/build/Debug",
+  "command": "D:\\Toolchain\\STM32CubeCLT_1.18.0\\GNU-tools-for-STM32\\bin\\arm-none-eabi-gcc.exe -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -ID:/STM32Project/ESC_2/USER/Inc -ID:/STM32Project/ESC_2/Core/Inc -ID:/STM32Project/ESC_2/Drivers/STM32F1xx_HAL_Driver/Inc -ID:/STM32Project/ESC_2/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -ID:/STM32Project/ESC_2/Drivers/CMSIS/Device/ST/STM32F1xx/Include -ID:/STM32Project/ESC_2/Drivers/CMSIS/Include  -mcpu=cortex-m3  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -mcpu=cortex-m3  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11 -o CMakeFiles\\ESC.dir\\Core\\Src\\syscalls.c.obj -c D:\\STM32Project\\ESC_2\\Core\\Src\\syscalls.c",
+  "file": "D:\\STM32Project\\ESC_2\\Core\\Src\\syscalls.c",
+  "output": "CMakeFiles\\ESC.dir\\Core\\Src\\syscalls.c.obj"
+},
+{
+  "directory": "D:/STM32Project/ESC_2/build/Debug",
+  "command": "D:\\Toolchain\\STM32CubeCLT_1.18.0\\GNU-tools-for-STM32\\bin\\arm-none-eabi-gcc.exe -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -ID:/STM32Project/ESC_2/USER/Inc -ID:/STM32Project/ESC_2/Core/Inc -ID:/STM32Project/ESC_2/Drivers/STM32F1xx_HAL_Driver/Inc -ID:/STM32Project/ESC_2/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -ID:/STM32Project/ESC_2/Drivers/CMSIS/Device/ST/STM32F1xx/Include -ID:/STM32Project/ESC_2/Drivers/CMSIS/Include  -mcpu=cortex-m3  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -mcpu=cortex-m3  -x assembler-with-cpp -MMD -MP -g -o CMakeFiles\\ESC.dir\\startup_stm32f103xb.s.obj -c D:\\STM32Project\\ESC_2\\startup_stm32f103xb.s",
+  "file": "D:\\STM32Project\\ESC_2\\startup_stm32f103xb.s",
+  "output": "CMakeFiles\\ESC.dir\\startup_stm32f103xb.s.obj"
+},
+{
+  "directory": "D:/STM32Project/ESC_2/build/Debug",
+  "command": "D:\\Toolchain\\STM32CubeCLT_1.18.0\\GNU-tools-for-STM32\\bin\\arm-none-eabi-gcc.exe -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -ID:/STM32Project/ESC_2/USER/Inc -ID:/STM32Project/ESC_2/Core/Inc -ID:/STM32Project/ESC_2/Drivers/STM32F1xx_HAL_Driver/Inc -ID:/STM32Project/ESC_2/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -ID:/STM32Project/ESC_2/Drivers/CMSIS/Device/ST/STM32F1xx/Include -ID:/STM32Project/ESC_2/Drivers/CMSIS/Include  -mcpu=cortex-m3  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -mcpu=cortex-m3  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11 -o CMakeFiles\\ESC.dir\\USER\\Src\\ESC.c.obj -c D:\\STM32Project\\ESC_2\\USER\\Src\\ESC.c",
+  "file": "D:\\STM32Project\\ESC_2\\USER\\Src\\ESC.c",
+  "output": "CMakeFiles\\ESC.dir\\USER\\Src\\ESC.c.obj"
+},
+{
+  "directory": "D:/STM32Project/ESC_2/build/Debug",
+  "command": "D:\\Toolchain\\STM32CubeCLT_1.18.0\\GNU-tools-for-STM32\\bin\\arm-none-eabi-gcc.exe -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -ID:/STM32Project/ESC_2/Core/Inc -ID:/STM32Project/ESC_2/Drivers/STM32F1xx_HAL_Driver/Inc -ID:/STM32Project/ESC_2/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -ID:/STM32Project/ESC_2/Drivers/CMSIS/Device/ST/STM32F1xx/Include -ID:/STM32Project/ESC_2/Drivers/CMSIS/Include  -mcpu=cortex-m3  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -mcpu=cortex-m3  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11 -o cmake\\stm32cubemx\\CMakeFiles\\STM32_Drivers.dir\\__\\__\\Core\\Src\\system_stm32f1xx.c.obj -c D:\\STM32Project\\ESC_2\\Core\\Src\\system_stm32f1xx.c",
+  "file": "D:\\STM32Project\\ESC_2\\Core\\Src\\system_stm32f1xx.c",
+  "output": "cmake\\stm32cubemx\\CMakeFiles\\STM32_Drivers.dir\\__\\__\\Core\\Src\\system_stm32f1xx.c.obj"
+},
+{
+  "directory": "D:/STM32Project/ESC_2/build/Debug",
+  "command": "D:\\Toolchain\\STM32CubeCLT_1.18.0\\GNU-tools-for-STM32\\bin\\arm-none-eabi-gcc.exe -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -ID:/STM32Project/ESC_2/Core/Inc -ID:/STM32Project/ESC_2/Drivers/STM32F1xx_HAL_Driver/Inc -ID:/STM32Project/ESC_2/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -ID:/STM32Project/ESC_2/Drivers/CMSIS/Device/ST/STM32F1xx/Include -ID:/STM32Project/ESC_2/Drivers/CMSIS/Include  -mcpu=cortex-m3  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -mcpu=cortex-m3  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11 -o cmake\\stm32cubemx\\CMakeFiles\\STM32_Drivers.dir\\__\\__\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_gpio_ex.c.obj -c D:\\STM32Project\\ESC_2\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_gpio_ex.c",
+  "file": "D:\\STM32Project\\ESC_2\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_gpio_ex.c",
+  "output": "cmake\\stm32cubemx\\CMakeFiles\\STM32_Drivers.dir\\__\\__\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_gpio_ex.c.obj"
+},
+{
+  "directory": "D:/STM32Project/ESC_2/build/Debug",
+  "command": "D:\\Toolchain\\STM32CubeCLT_1.18.0\\GNU-tools-for-STM32\\bin\\arm-none-eabi-gcc.exe -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -ID:/STM32Project/ESC_2/Core/Inc -ID:/STM32Project/ESC_2/Drivers/STM32F1xx_HAL_Driver/Inc -ID:/STM32Project/ESC_2/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -ID:/STM32Project/ESC_2/Drivers/CMSIS/Device/ST/STM32F1xx/Include -ID:/STM32Project/ESC_2/Drivers/CMSIS/Include  -mcpu=cortex-m3  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -mcpu=cortex-m3  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11 -o cmake\\stm32cubemx\\CMakeFiles\\STM32_Drivers.dir\\__\\__\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_tim.c.obj -c D:\\STM32Project\\ESC_2\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_tim.c",
+  "file": "D:\\STM32Project\\ESC_2\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_tim.c",
+  "output": "cmake\\stm32cubemx\\CMakeFiles\\STM32_Drivers.dir\\__\\__\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_tim.c.obj"
+},
+{
+  "directory": "D:/STM32Project/ESC_2/build/Debug",
+  "command": "D:\\Toolchain\\STM32CubeCLT_1.18.0\\GNU-tools-for-STM32\\bin\\arm-none-eabi-gcc.exe -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -ID:/STM32Project/ESC_2/Core/Inc -ID:/STM32Project/ESC_2/Drivers/STM32F1xx_HAL_Driver/Inc -ID:/STM32Project/ESC_2/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -ID:/STM32Project/ESC_2/Drivers/CMSIS/Device/ST/STM32F1xx/Include -ID:/STM32Project/ESC_2/Drivers/CMSIS/Include  -mcpu=cortex-m3  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -mcpu=cortex-m3  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11 -o cmake\\stm32cubemx\\CMakeFiles\\STM32_Drivers.dir\\__\\__\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_tim_ex.c.obj -c D:\\STM32Project\\ESC_2\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_tim_ex.c",
+  "file": "D:\\STM32Project\\ESC_2\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_tim_ex.c",
+  "output": "cmake\\stm32cubemx\\CMakeFiles\\STM32_Drivers.dir\\__\\__\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_tim_ex.c.obj"
+},
+{
+  "directory": "D:/STM32Project/ESC_2/build/Debug",
+  "command": "D:\\Toolchain\\STM32CubeCLT_1.18.0\\GNU-tools-for-STM32\\bin\\arm-none-eabi-gcc.exe -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -ID:/STM32Project/ESC_2/Core/Inc -ID:/STM32Project/ESC_2/Drivers/STM32F1xx_HAL_Driver/Inc -ID:/STM32Project/ESC_2/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -ID:/STM32Project/ESC_2/Drivers/CMSIS/Device/ST/STM32F1xx/Include -ID:/STM32Project/ESC_2/Drivers/CMSIS/Include  -mcpu=cortex-m3  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -mcpu=cortex-m3  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11 -o cmake\\stm32cubemx\\CMakeFiles\\STM32_Drivers.dir\\__\\__\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal.c.obj -c D:\\STM32Project\\ESC_2\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal.c",
+  "file": "D:\\STM32Project\\ESC_2\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal.c",
+  "output": "cmake\\stm32cubemx\\CMakeFiles\\STM32_Drivers.dir\\__\\__\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal.c.obj"
+},
+{
+  "directory": "D:/STM32Project/ESC_2/build/Debug",
+  "command": "D:\\Toolchain\\STM32CubeCLT_1.18.0\\GNU-tools-for-STM32\\bin\\arm-none-eabi-gcc.exe -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -ID:/STM32Project/ESC_2/Core/Inc -ID:/STM32Project/ESC_2/Drivers/STM32F1xx_HAL_Driver/Inc -ID:/STM32Project/ESC_2/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -ID:/STM32Project/ESC_2/Drivers/CMSIS/Device/ST/STM32F1xx/Include -ID:/STM32Project/ESC_2/Drivers/CMSIS/Include  -mcpu=cortex-m3  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -mcpu=cortex-m3  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11 -o cmake\\stm32cubemx\\CMakeFiles\\STM32_Drivers.dir\\__\\__\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_rcc.c.obj -c D:\\STM32Project\\ESC_2\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_rcc.c",
+  "file": "D:\\STM32Project\\ESC_2\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_rcc.c",
+  "output": "cmake\\stm32cubemx\\CMakeFiles\\STM32_Drivers.dir\\__\\__\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_rcc.c.obj"
+},
+{
+  "directory": "D:/STM32Project/ESC_2/build/Debug",
+  "command": "D:\\Toolchain\\STM32CubeCLT_1.18.0\\GNU-tools-for-STM32\\bin\\arm-none-eabi-gcc.exe -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -ID:/STM32Project/ESC_2/Core/Inc -ID:/STM32Project/ESC_2/Drivers/STM32F1xx_HAL_Driver/Inc -ID:/STM32Project/ESC_2/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -ID:/STM32Project/ESC_2/Drivers/CMSIS/Device/ST/STM32F1xx/Include -ID:/STM32Project/ESC_2/Drivers/CMSIS/Include  -mcpu=cortex-m3  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -mcpu=cortex-m3  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11 -o cmake\\stm32cubemx\\CMakeFiles\\STM32_Drivers.dir\\__\\__\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_rcc_ex.c.obj -c D:\\STM32Project\\ESC_2\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_rcc_ex.c",
+  "file": "D:\\STM32Project\\ESC_2\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_rcc_ex.c",
+  "output": "cmake\\stm32cubemx\\CMakeFiles\\STM32_Drivers.dir\\__\\__\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_rcc_ex.c.obj"
+},
+{
+  "directory": "D:/STM32Project/ESC_2/build/Debug",
+  "command": "D:\\Toolchain\\STM32CubeCLT_1.18.0\\GNU-tools-for-STM32\\bin\\arm-none-eabi-gcc.exe -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -ID:/STM32Project/ESC_2/Core/Inc -ID:/STM32Project/ESC_2/Drivers/STM32F1xx_HAL_Driver/Inc -ID:/STM32Project/ESC_2/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -ID:/STM32Project/ESC_2/Drivers/CMSIS/Device/ST/STM32F1xx/Include -ID:/STM32Project/ESC_2/Drivers/CMSIS/Include  -mcpu=cortex-m3  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -mcpu=cortex-m3  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11 -o cmake\\stm32cubemx\\CMakeFiles\\STM32_Drivers.dir\\__\\__\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_gpio.c.obj -c D:\\STM32Project\\ESC_2\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_gpio.c",
+  "file": "D:\\STM32Project\\ESC_2\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_gpio.c",
+  "output": "cmake\\stm32cubemx\\CMakeFiles\\STM32_Drivers.dir\\__\\__\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_gpio.c.obj"
+},
+{
+  "directory": "D:/STM32Project/ESC_2/build/Debug",
+  "command": "D:\\Toolchain\\STM32CubeCLT_1.18.0\\GNU-tools-for-STM32\\bin\\arm-none-eabi-gcc.exe -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -ID:/STM32Project/ESC_2/Core/Inc -ID:/STM32Project/ESC_2/Drivers/STM32F1xx_HAL_Driver/Inc -ID:/STM32Project/ESC_2/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -ID:/STM32Project/ESC_2/Drivers/CMSIS/Device/ST/STM32F1xx/Include -ID:/STM32Project/ESC_2/Drivers/CMSIS/Include  -mcpu=cortex-m3  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -mcpu=cortex-m3  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11 -o cmake\\stm32cubemx\\CMakeFiles\\STM32_Drivers.dir\\__\\__\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_dma.c.obj -c D:\\STM32Project\\ESC_2\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_dma.c",
+  "file": "D:\\STM32Project\\ESC_2\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_dma.c",
+  "output": "cmake\\stm32cubemx\\CMakeFiles\\STM32_Drivers.dir\\__\\__\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_dma.c.obj"
+},
+{
+  "directory": "D:/STM32Project/ESC_2/build/Debug",
+  "command": "D:\\Toolchain\\STM32CubeCLT_1.18.0\\GNU-tools-for-STM32\\bin\\arm-none-eabi-gcc.exe -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -ID:/STM32Project/ESC_2/Core/Inc -ID:/STM32Project/ESC_2/Drivers/STM32F1xx_HAL_Driver/Inc -ID:/STM32Project/ESC_2/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -ID:/STM32Project/ESC_2/Drivers/CMSIS/Device/ST/STM32F1xx/Include -ID:/STM32Project/ESC_2/Drivers/CMSIS/Include  -mcpu=cortex-m3  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -mcpu=cortex-m3  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11 -o cmake\\stm32cubemx\\CMakeFiles\\STM32_Drivers.dir\\__\\__\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_cortex.c.obj -c D:\\STM32Project\\ESC_2\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_cortex.c",
+  "file": "D:\\STM32Project\\ESC_2\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_cortex.c",
+  "output": "cmake\\stm32cubemx\\CMakeFiles\\STM32_Drivers.dir\\__\\__\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_cortex.c.obj"
+},
+{
+  "directory": "D:/STM32Project/ESC_2/build/Debug",
+  "command": "D:\\Toolchain\\STM32CubeCLT_1.18.0\\GNU-tools-for-STM32\\bin\\arm-none-eabi-gcc.exe -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -ID:/STM32Project/ESC_2/Core/Inc -ID:/STM32Project/ESC_2/Drivers/STM32F1xx_HAL_Driver/Inc -ID:/STM32Project/ESC_2/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -ID:/STM32Project/ESC_2/Drivers/CMSIS/Device/ST/STM32F1xx/Include -ID:/STM32Project/ESC_2/Drivers/CMSIS/Include  -mcpu=cortex-m3  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -mcpu=cortex-m3  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11 -o cmake\\stm32cubemx\\CMakeFiles\\STM32_Drivers.dir\\__\\__\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_pwr.c.obj -c D:\\STM32Project\\ESC_2\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_pwr.c",
+  "file": "D:\\STM32Project\\ESC_2\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_pwr.c",
+  "output": "cmake\\stm32cubemx\\CMakeFiles\\STM32_Drivers.dir\\__\\__\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_pwr.c.obj"
+},
+{
+  "directory": "D:/STM32Project/ESC_2/build/Debug",
+  "command": "D:\\Toolchain\\STM32CubeCLT_1.18.0\\GNU-tools-for-STM32\\bin\\arm-none-eabi-gcc.exe -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -ID:/STM32Project/ESC_2/Core/Inc -ID:/STM32Project/ESC_2/Drivers/STM32F1xx_HAL_Driver/Inc -ID:/STM32Project/ESC_2/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -ID:/STM32Project/ESC_2/Drivers/CMSIS/Device/ST/STM32F1xx/Include -ID:/STM32Project/ESC_2/Drivers/CMSIS/Include  -mcpu=cortex-m3  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -mcpu=cortex-m3  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11 -o cmake\\stm32cubemx\\CMakeFiles\\STM32_Drivers.dir\\__\\__\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_flash.c.obj -c D:\\STM32Project\\ESC_2\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_flash.c",
+  "file": "D:\\STM32Project\\ESC_2\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_flash.c",
+  "output": "cmake\\stm32cubemx\\CMakeFiles\\STM32_Drivers.dir\\__\\__\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_flash.c.obj"
+},
+{
+  "directory": "D:/STM32Project/ESC_2/build/Debug",
+  "command": "D:\\Toolchain\\STM32CubeCLT_1.18.0\\GNU-tools-for-STM32\\bin\\arm-none-eabi-gcc.exe -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -ID:/STM32Project/ESC_2/Core/Inc -ID:/STM32Project/ESC_2/Drivers/STM32F1xx_HAL_Driver/Inc -ID:/STM32Project/ESC_2/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -ID:/STM32Project/ESC_2/Drivers/CMSIS/Device/ST/STM32F1xx/Include -ID:/STM32Project/ESC_2/Drivers/CMSIS/Include  -mcpu=cortex-m3  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -mcpu=cortex-m3  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11 -o cmake\\stm32cubemx\\CMakeFiles\\STM32_Drivers.dir\\__\\__\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_flash_ex.c.obj -c D:\\STM32Project\\ESC_2\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_flash_ex.c",
+  "file": "D:\\STM32Project\\ESC_2\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_flash_ex.c",
+  "output": "cmake\\stm32cubemx\\CMakeFiles\\STM32_Drivers.dir\\__\\__\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_flash_ex.c.obj"
+},
+{
+  "directory": "D:/STM32Project/ESC_2/build/Debug",
+  "command": "D:\\Toolchain\\STM32CubeCLT_1.18.0\\GNU-tools-for-STM32\\bin\\arm-none-eabi-gcc.exe -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -ID:/STM32Project/ESC_2/Core/Inc -ID:/STM32Project/ESC_2/Drivers/STM32F1xx_HAL_Driver/Inc -ID:/STM32Project/ESC_2/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -ID:/STM32Project/ESC_2/Drivers/CMSIS/Device/ST/STM32F1xx/Include -ID:/STM32Project/ESC_2/Drivers/CMSIS/Include  -mcpu=cortex-m3  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -mcpu=cortex-m3  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11 -o cmake\\stm32cubemx\\CMakeFiles\\STM32_Drivers.dir\\__\\__\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_exti.c.obj -c D:\\STM32Project\\ESC_2\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_exti.c",
+  "file": "D:\\STM32Project\\ESC_2\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_exti.c",
+  "output": "cmake\\stm32cubemx\\CMakeFiles\\STM32_Drivers.dir\\__\\__\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_exti.c.obj"
+}
+]
